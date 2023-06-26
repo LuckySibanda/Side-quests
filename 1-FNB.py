@@ -129,7 +129,3 @@ transactionType()
 # withdraw()
 # bank.list_of_accounts()
 # bank.total_bank_balance()
-
-"""
-add withdraw,
-then add the ability for the user to decide if they want to deposit or withdraw"""

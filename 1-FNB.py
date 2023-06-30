@@ -100,9 +100,13 @@ def withdraw():
 
         for account in bank.account_list:
             if account.account_number == account_number:
-                print(f"{account.account_number}: {account.balance}\n")
-                account.withdraw(amount)
-                print(f"{account.account_number}: {account.balance}\n")
+                # print(f"{account.account_number}: {account.balance}\n")
+                # account.withdraw(amount)
+                # print(f"{account.account_number}: {account.balance}\n")
+                if account.balance >= amount:
+                    account.withdraw(amount)
+                elif account.balance < amount:
+                    print("Insufficient balance for transaction")
                 break
 
 

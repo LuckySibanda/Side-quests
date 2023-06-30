@@ -92,8 +92,6 @@ def deposit():
                     account.deposit(amount)
                 else:
                     print("Can only deposit in denominations of 50")
-            else:
-                print("Account not found, check if you provided the correct details")
                 break
 
 def withdraw():
@@ -113,8 +111,6 @@ def withdraw():
                     account.withdraw(amount)
                 elif account.balance < amount:
                     print("Insufficient balance for transaction")
-            else:
-                print("Account not found, check if you provided the correct details")
                 break
 
 

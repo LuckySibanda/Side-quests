@@ -75,7 +75,7 @@ class BankAccount:
 bank = Bank("FNB")
 
 def deposit():
-    print("===Depositing===\n")
+    print("=== Depositing ===\n")
     while True:
         account_number = input("Enter your account number (or 'q' to quit): ")
         if account_number == 'q':
@@ -92,10 +92,12 @@ def deposit():
                     account.deposit(amount)
                 else:
                     print("Can only deposit in denominations of 50")
+            else:
+                print("Account not found, check if you provided the correct details")
                 break
 
 def withdraw():
-    print("===Withdrawing===\n")
+    print("=== Withdrawing ===\n")
     while True:
         account_number = input("Enter your account number (or 'q' to quit): ")
         if account_number == 'q':
@@ -111,11 +113,13 @@ def withdraw():
                     account.withdraw(amount)
                 elif account.balance < amount:
                     print("Insufficient balance for transaction")
+            else:
+                print("Account not found, check if you provided the correct details")
                 break
 
 
 def transactionType():
-    print("Choose the transaction you want to perform \n -Deposit\n -Withdraw")
+    print("== Choose the transaction you want to perform ==\n -Deposit\n -Withdraw")
     while True:
         transaction_type = input("Enter transaction type (or 'q' to quit): ")
         if transaction_type == 'q':
@@ -126,7 +130,7 @@ def transactionType():
         elif transaction_type.lower() == "deposit":
             deposit()
         else:
-            print("Enter valid value,")
+            print("Enter valid value")
 
     print("Thank You For Banking With FNB!")
         

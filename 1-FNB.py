@@ -85,9 +85,13 @@ def deposit():
         
         for account in bank.account_list:
             if account.account_number == account_number:
-                print(f"{account.account_number}: {account.balance}\n")
-                account.deposit(amount)
-                print(f"{account.account_number}: {account.balance}\n")
+                # print(f"{account.account_number}: {account.balance}\n")
+                # account.deposit(amount)
+                # print(f"{account.account_number}: {account.balance}\n")
+                if amount % 50 == 0:
+                    account.deposit(amount)
+                else:
+                    print("Can only deposit in denominations of 50")
                 break
 
 def withdraw():

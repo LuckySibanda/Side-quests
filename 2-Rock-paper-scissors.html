@@ -10,38 +10,14 @@
     <button onclick="
         const computer_choice = computer_choice_function();
 
-        const user_choice = 'rock';
-
-        let result = '';
-
-        if (computer_choice === user_choice) {
-            result = 'Tie';
-        }
-        else if (computer_choice === 'paper') {
-            result = 'Lose';
-        }
-        else if (computer_choice === 'scissors') {
-            result = 'Win'
-        }
+        playgame('rock')
 
         alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
     ">Rock</button>
     <button onclick="
         const computer_choice = computer_choice_function();
 
-        const user_choice = 'paper';
-
-        let result = '';
-
-        if (computer_choice === user_choice) {
-            result = 'Tie';
-        }
-        else if (computer_choice === 'rock') {
-            result = 'Win';
-        }
-        else if (computer_choice === 'scissors') {
-            result = 'Lose';
-        }
+        playgame('paper')
 
         alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
     ">Paper</button>
@@ -50,19 +26,7 @@
     <button onclick="
         const computer_choice = computer_choice_function();
 
-        const user_choice = 'scissors';
-
-        let result = '';
-
-        if (computer_choice === user_choice) {
-            result = 'Tie';
-        }
-        else if (computer_choice === 'paper') {
-            result = 'Win';
-        }
-        else if (computer_choice === 'rock') {
-            result = 'Lose'
-        }
+        playgame('scissors')
 
         alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
     ">Scissors</button>
@@ -95,11 +59,14 @@
             if (computer_choice === user_choice) {
                 result = 'Tie';
             }
-            else if (computer_choice === 'paper') {
-                result = 'Lose';
+            else if (computer_choice === 'rock' && user_choice === 'paper') {
+                result = 'paper';
             }
-            else if (computer_choice === 'scissors') {
-                result = 'Win'
+            else if (computer_choice === 'rock' && user_choice === 'scissors') {
+                result = 'rock';
+            }
+            else if (computer_choice === 'paper' && user_choice === 'scissors') {
+                result = 'scissors';
             }
         }
     </script>

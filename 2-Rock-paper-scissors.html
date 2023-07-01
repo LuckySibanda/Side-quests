@@ -85,6 +85,23 @@
 
             return computer_choice;
         }
+
+        function playGame(user_choice) {
+
+            const computer_choice = computer_choice_function();
+
+            let result = '';
+
+            if (computer_choice === user_choice) {
+                result = 'Tie';
+            }
+            else if (computer_choice === 'paper') {
+                result = 'Lose';
+            }
+            else if (computer_choice === 'scissors') {
+                result = 'Win'
+            }
+        }
     </script>
 </body>
 </html>

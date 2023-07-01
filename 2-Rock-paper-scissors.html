@@ -9,26 +9,23 @@
     <h2>Rock Paper Scissors</h2>
     <button onclick="
         const computer_choice = computer_choice_function();
-
         playgame('rock')
+        resultAlert()
 
-        alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
     ">Rock</button>
     <button onclick="
         const computer_choice = computer_choice_function();
-
         playgame('paper')
+        resultAlert()
 
-        alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
     ">Paper</button>
 
 
     <button onclick="
         const computer_choice = computer_choice_function();
-
         playgame('scissors')
-
-        alert(`Computer threw ${computer_choice} and you threw ${user_choice}. So you ${result}`);
+        resultAlert()
+        
     ">Scissors</button>
 
 
@@ -68,6 +65,12 @@
             else if (computer_choice === 'paper' && user_choice === 'scissors') {
                 result = 'scissors';
             }
+        }
+
+        function resultAlert () {
+            alert(`Computer hand: ${computer_choice}
+                Your hand: ${user_choice}
+                You: ${result}`)
         }
     </script>
 </body>

@@ -7,33 +7,18 @@
 </head>
 <body>
     <h2>Rock Paper Scissors</h2>
-    <button onclick="
-        const computer_choice = computer_choice_function();
-        playGame('rock')
-        resultAlert()
-
-    ">Rock</button>
-    <button onclick="
-        const computer_choice = computer_choice_function();
-        playGame('paper')
-        resultAlert()
-
-    ">Paper</button>
-
-
-    <button onclick="
-        const computer_choice = computer_choice_function();
-        playGame('scissors')
-        resultAlert()
-        
-    ">Scissors</button>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
 
 
     <script>
+        // Function to generate the computer's choice
         function computer_choice_function () {
             let randomNumber = Math.random();
             let computer_choice = '';
 
+            // Randomly assign rock, paper, or scissors based on the randomNumber
             if (randomNumber > 0 && randomNumber < 1 / 3) {
                 computer_choice = 'rock';
             }
@@ -47,30 +32,37 @@
             return computer_choice;
         }
 
+        // Function to play the game
         function playGame(user_choice) {
-
+            // Call the computer_choice_function to get the computer's choice
             const computer_choice = computer_choice_function();
 
             let result = '';
 
+            // Determine the result based on the choices
             if (computer_choice === user_choice) {
                 result = 'Tie';
             }
-            else if (computer_choice === 'rock' && user_choice === 'paper') {
-                result = 'paper';
+            else if (
+                (computer_choice === 'rock' && user_choice === 'scissors') ||
+                (computer_choice === 'paper' && user_choice === 'rock') ||
+                (computer_choice === 'scissors' && user_choice === 'paper')
+            ) {
+                result = 'You lose';
             }
-            else if (computer_choice === 'rock' && user_choice === 'scissors') {
-                result = 'rock';
+            else {
+                result = 'You win';
             }
-            else if (computer_choice === 'paper' && user_choice === 'scissors') {
-                result = 'scissors';
-            }
+
+            // Call the resultAlert function with the relevant information
+            resultAlert(computer_choice, user_choice, result);
         }
 
-        function resultAlert () {
-            alert(`Computer hand: ${computer_choice}
-                Your hand: ${user_choice}
-                You: ${result}`)
+        // Function to display the result in an alert
+        function resultAlert(computer_choice, user_choice, result) {
+            console.log(`Computer hand: ${computer_choice}
+            Your hand: ${user_choice}
+            Result: ${result}`);
         }
     </script>
 </body>
